@@ -367,6 +367,8 @@ load("dat/counts2y.rda")
 # To lighten the github repository the ~2GB simulated data is not uploaded
 # there. Please note, it will take considerable time to simulate this data
 # locally again. The mentioned times are on my machine -- Mac Pro 2018
+# The produced data is saved in the "tmp" local directory that is exluced
+# from syncing to github
 # -------------------------------------------------------------------------
 
 
@@ -407,7 +409,7 @@ df_fit_sim_b <- df_sim %>%
     }) %>%
     ungroup()
 tictoc::toc()
-save(df_fit_sim_b, file = "dat/sim_fit_5e2_BOTH.rda")
+save(df_fit_sim_b, file = "tmp/dat/sim_fit_5e2_BOTH.rda")
 
 
 # calculate life tables based on simulated data ~ 4 min
@@ -418,7 +420,7 @@ df_lt_sim_b <- df_fit_sim_b %>%
     group_modify(~ lt(mx = .x$mx_fit, a0 = .3)) %>%
     ungroup()
 tictoc::toc()
-save(df_lt_sim_b, file = "dat/sim_lt_5e2_BOTH.rda")
+save(df_lt_sim_b, file = "tmp/dat/sim_lt_5e2_BOTH.rda")
 
 
 # FEMALES -----------------------------------------------------------------
@@ -439,7 +441,7 @@ df_fit_sim_f <- df_sim %>%
     }) %>%
     ungroup()
 tictoc::toc()
-save(df_fit_sim_f, file = "dat/sim_fit_5e2_FEMALES.rda")
+save(df_fit_sim_f, file = "tmp/dat/sim_fit_5e2_FEMALES.rda")
 
 
 # calculate life tables based on simulated data ~ 4 min
@@ -450,7 +452,7 @@ df_lt_sim_f <- df_fit_sim_f %>%
     group_modify(~ lt(mx = .x$mx_fit, a0 = .3)) %>%
     ungroup()
 tictoc::toc()
-save(df_lt_sim_f, file = "dat/sim_lt_5e2_FEMALES.rda")
+save(df_lt_sim_f, file = "tmp/dat/sim_lt_5e2_FEMALES.rda")
 
 # MALES -------------------------------------------------------------------
 
@@ -471,7 +473,7 @@ df_fit_sim_m <- df_sim %>%
     }) %>%
     ungroup()
 tictoc::toc()
-save(df_fit_sim_m, file = "dat/sim_fit_5e2_MALES.rda")
+save(df_fit_sim_m, file = "tmp/dat/sim_fit_5e2_MALES.rda")
 
 
 # calculate life tables based on simulated data ~ 4 min
@@ -482,5 +484,5 @@ df_lt_sim_m <- df_fit_sim_m %>%
     group_modify(~ lt(mx = .x$mx_fit, a0 = .3)) %>%
     ungroup()
 tictoc::toc()
-save(df_lt_sim_m, file = "dat/sim_lt_5e2_MALES.rda")
+save(df_lt_sim_m, file = "tmp/dat/sim_lt_5e2_MALES.rda")
 
