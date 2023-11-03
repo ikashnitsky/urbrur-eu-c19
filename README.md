@@ -11,3 +11,5 @@ Kashnitsky, I. [1*], Trias-Llimós, S. [2],  & Villavicencio, F. [1,3]
 This paper explores differences in mortality dynamics between urban and rural areas of 20 European countries during the two pandemic years 2020 and 2021. The link between population density and the spread of communicable diseases is a well-established phenomenon, yet to what extent this results in a mortality gap after years of ongoing epidemics is a less explored question. We find pronounced and significant differences, with urban areas being harder hit by COVID-19 mortality in most countries.
 
 
+![](/fig/urbrur-e0diff-cntr-ci-BOTH.png)
+
